@@ -3,10 +3,9 @@ def compressed_vector(arr):
 	i = 1
 	leng = 1
 	while i < len(arr):
-		print(i)
 		if arr[i] == arr[i - 1]:
-			i = i + 1
 			leng = leng + 1
+			i = i + 1
 		else:
 			new_arr.append((arr[i - 1], leng))
 			leng = 1
