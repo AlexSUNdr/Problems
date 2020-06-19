@@ -17,3 +17,32 @@ def is_palindrom(line):
     return 'Is palindrom'
 
 
+
+def _is_english_letter(symbol):
+    return 'A' <= symbol.upper() <= 'Z'
+
+
+def is_palindrome(line):
+    line_len = len(line)
+    i = 0
+    j = line_len - 1
+
+    while True:
+        while (i < line_len) and (not _is_english_letter(line[i])):
+            i += 1
+            
+        while (j > i) and (not _is_english_letter(line[j])):
+            j -= 1
+            
+        if i > j:
+            break
+            
+        if line[i].upper() != line[j].upper():
+            return False
+
+        j -= 1
+        i += 1
+
+    return True
+
+
